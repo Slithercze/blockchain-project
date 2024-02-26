@@ -1,0 +1,337 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin:0;
+
+}
+
+#logged-out-message {
+    max-width: 200px;
+    word-wrap: break-word;
+    display: none;
+    color: red;
+    margin-bottom: 20px;
+}
+
+/*list of transactions*/
+.wrapperForDropdown{
+    position: relative;
+    bottom: 3em;
+    right: 11em;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 0.3em;
+    background-color: #f9f9f9;
+    max-width: 22em;
+    min-width: 280px;
+    max-height: 0;
+    overflow-y: auto;
+    border: 2px solid #27ae60;
+    z-index: 1;
+    transition: max-height 0.25s ease-out;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content.open {
+    max-height: 400px;
+}
+
+.transaction-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 2px solid #848484;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-item:hover {
+    background-color: #f1f1f1;
+}
+
+/*hover over hash */
+
+.hashBlue{
+    cursor: pointer;
+    font-weight: bold;
+    color: #7171ff;
+}
+.hashBlue:hover{
+    color: blue;
+    text-decoration: underline;
+}
+#copy-notification {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #27ae60;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+
+/*buttons for logging in*/
+
+.auth-buttons {
+    width: auto;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.auth-buttons span {
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    display: none;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+.auth-buttons button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.auth-buttons button:hover {
+    background-color: #27ae60;
+}
+
+#logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#logout-button:hover {
+    background-color: #c0392b;
+}
+
+/*blocks*/
+.page{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap-reverse;
+}
+
+.box {
+    align-self: flex-end;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #90ee90;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    gap: 10px;
+    flex-grow: 1;
+    width: 550px;
+    max-height: 54em;
+}
+
+.container {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container textarea {
+    height: 4em;
+}
+.container form span {
+    margin-top: 5px;
+}
+
+.keys {
+    width: max-content;
+    word-wrap: break-word;
+    padding: 10px;
+}
+
+.keys p {
+    font-size: 13px;
+}
+
+h1 {
+    color: #27ae60;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+textarea {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+    width: 100%;
+}
+
+.privKey {
+    background-color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+.hide {
+    display: none;
+}
+
+button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+.miner {
+    /*background-color: #90ee90;*/
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    /*color: #fff;*/
+    font-size: 16px;
+}
+
+.chain {
+    flex-grow: 3;
+    width: auto;
+}
+
+.block {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #90ee90;
+    background: linear-gradient(90deg, rgba(144,238,144,1) 9%, rgba(255,255,255,1) 66%);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 16px;
+}
+
+.block-fields {
+    /*background-color: #fff;*/
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    /*margin-bottom: 5px;*/
+    overflow-wrap: break-word;
+    position: relative;
+}
+.transactionField{
+    /*background-color: #fff;*/
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 5px;
+    overflow-wrap: break-word;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.block p {
+    margin: 5px 0;
+    font-weight: bold;
+
+}
+
+.block span {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+.template {
+    display: none;
+}
+
+
+/*transaction form*/
+
+.transaction {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction button {
+    position: relative;
+    z-index: 2;
+}
+.blockInfo {
+    width: 70px;
+    height: 35px;
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.up {
+    background-image: url("up_arrow_8.png");
+}
+
+.down {
+    background-image: url("down_arrow_8.png");
+}
+
